@@ -17,7 +17,9 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://stuffynaan:stuffyji@stuffy.vuhd2se.mongodb.net/todolistDB",);
+const MONGO_URL = "mongodb+srv://stuffynaan:stuffyji@stuffy.vuhd2se.mongodb.net/todolistDB";
+
+mongoose.connect(MONGO_URL);
 const itemSchema = new mongoose.Schema({
   name:String
 })
